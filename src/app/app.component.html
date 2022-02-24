@@ -1,0 +1,36 @@
+<div class="div-painel" *ngIf="planetaSelecionado">
+  <img
+    class="imagem-planeta"
+    [src]="planetaSelecionado.imagem"
+    alt="Planeta Terra"
+  />
+  <p>
+    Nome:<strong>{{ planetaSelecionado.nome }}</strong>
+  </p>
+  <p>
+    Temperatura Média:<strong>{{ planetaSelecionado.temperatura }}ºC</strong>
+  </p>
+  <p>
+    Chance de ter vida:<strong>{{ planetaSelecionado.chanceDeTerVida }}</strong>
+  </p>
+  <p>
+    Diâmetro:<strong>{{ planetaSelecionado.diametro }} km</strong>
+  </p>
+  <p>
+    Tamanho:<strong>{{ planetaSelecionado.tamanho }} </strong>
+  </p>
+  <p>
+    Dia:<strong> {{ planetaSelecionado.dia }}h Ano</strong>:<strong
+      >{{ planetaSelecionado.ano }}d</strong
+    >
+  </p>
+  <p>Curiosidade:{{ planetaSelecionado.curiosidade }}</p>
+</div>
+<div *ngFor="let planeta of planetas; index as i">
+  <img
+    (click)="clicouNoPlaneta(planeta)"
+    class="imagem-planeta animation-{{i}}"
+    [src]="planeta.imagem"
+    alt="Planeta Terra"
+  />
+</div>
